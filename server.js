@@ -6,9 +6,10 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware
+// middleware to parse JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// mounts the api routes under the /api prefix
 app.use("/api", routes);
 
 // Database Connection for MongoDB
